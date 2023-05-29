@@ -8,11 +8,28 @@ public class Tamagushi {
     private int saude;
     private int idade;
 
+    public Tamagushi(){
+        this.fome = 80;
+        this.saude = 100;
+    }
+
+    public void alterarNome(String novoNome){
+        this.nome = novoNome;
+    }
+
+    public void alterarFome(int novaFome){
+        this.fome = novaFome;
+        
+    }
+
     public void AlimentarBichinho(String AlimentaTamagushi){
         if (AlimentaTamagushi.equalsIgnoreCase("S")){
             this.fome += 25;
         } else if(AlimentaTamagushi.equalsIgnoreCase("N")){
             this.fome -= 20;
+        }
+        if (this.fome > 100){
+            System.out.println("Seu bichinho tá de buxo cheio");
         }
     }
 
@@ -23,9 +40,6 @@ public class Tamagushi {
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     public int getIdade() {
         return idade;
     }
@@ -33,5 +47,11 @@ public class Tamagushi {
         this.idade = idade;
     }
 
+    public int getSaude() {
+        return saude;
+    }
+    public int getFome() {
+        return fome;
+    }
     
 }
